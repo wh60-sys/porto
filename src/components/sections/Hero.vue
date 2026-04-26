@@ -109,7 +109,7 @@ const chars = fullName.split("");
           class="mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.4em] text-white/70"
         >
           <span class="h-px w-10 bg-gold/70" />
-          student Portfolio
+          student
         </p>
 
         <h1

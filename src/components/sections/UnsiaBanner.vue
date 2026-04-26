@@ -91,27 +91,17 @@ onMounted(() => {
           :accent="c.accent === 'gold' ? 'gold' : 'blue'"
           data-card
         >
-          <div class="flex items-start gap-3.5">
+          <div class="min-w-0">
+            <h3 class="font-display text-base font-bold leading-tight">
+              {{ c.title }}
+            </h3>
+            <p class="mt-3 text-sm leading-snug text-white/65">{{ c.description }}</p>
             <span
-              class="flex h-11 w-11 shrink-0 items-center justify-center rounded-card border border-white/10 bg-white/5 text-gold transition group-hover:bg-gold/15"
-              :class="
-                c.accent === 'gold' ? 'text-gold' : 'text-unsia-200'
-              "
+              class="mt-4 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-widest text-gold/90"
             >
-              <Icon :name="c.icon" :size="20" />
+              Buka
+              <Icon name="arrow-right" :size="14" />
             </span>
-            <div class="min-w-0 flex-1">
-              <h3 class="font-display text-base font-bold leading-tight">
-                {{ c.title }}
-              </h3>
-              <p class="mt-1 text-sm leading-snug text-white/65">{{ c.description }}</p>
-              <span
-                class="mt-2.5 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-widest text-gold/90"
-              >
-                Buka
-                <Icon name="arrow-right" :size="14" />
-              </span>
-            </div>
           </div>
         </Card>
       </div>

@@ -269,7 +269,7 @@ export const unsiaCards: UnsiaCard[] = [
     title: "Daftar Sekarang",
     description: "Pendaftaran Mahasiswa Baru UNSIA dibuka sepanjang tahun.",
     url: "https://pmb.unsia.ac.id/",
-    icon: "rocket",
+    icon: "",
     accent: "gold",
   },
   {

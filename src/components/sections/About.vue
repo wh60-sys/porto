@@ -220,14 +220,14 @@ onBeforeUnmount(() => {
 
       <!-- Content column -->
       <div class="lg:col-span-7">
-        <div data-reveal class="section-label">Tentang Saya</div>
-        <h2 data-reveal class="mt-4 font-display text-3xl font-bold sm:text-5xl">
+        <div data-reveal class="section-label">Profil</div>
+        <h2 data-reveal class="mt-4 font-display text-4xl font-bold sm:text-6xl">
+          {{ student.name }}
+        </h2>
+        <p data-reveal class="mt-4 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">
           Mahasiswa
           <span class="text-gradient-gold">Universitas Siber Asia</span>,
           membangun karier sambil belajar.
-        </h2>
-        <p data-reveal class="mt-6 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">
-          {{ student.bio }}
         </p>
 
         <!-- Program studi - separated card per prodi -->

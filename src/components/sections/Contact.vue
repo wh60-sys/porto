@@ -179,7 +179,7 @@ onMounted(() => {
             <p
               class="text-xs font-semibold uppercase tracking-[0.3em] text-white/85"
             >
-              Penutup
+            
             </p>
             <h3 class="mt-3 font-display text-2xl font-extrabold leading-tight sm:text-3xl">
               Siap kuliah online?

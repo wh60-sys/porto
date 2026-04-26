@@ -1,0 +1,11 @@
+
+> @workspace/portfolio@0.0.0 dev
+> vite --config vite.config.ts --host 0.0.0.0
+
+
+  VITE v5.4.21  ready in 512 ms
+
+  ➜  Local:   http://localhost:3000/
+  ➜  Network: http://10.0.12.62:3000/
+3:26:38 AM [vite] vite.config.ts changed, restarting server...
+3:26:38 AM [vite] server restarted.

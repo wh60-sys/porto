@@ -1,0 +1,112 @@
+# Cara Mengubah Teks Portfolio
+
+## File Utama yang Perlu Diedit
+
+### 1. Data Portfolio (`src/data/portfolio.ts`)
+File ini berisi hampir semua konten teks di portfolio.
+
+| Teks | Lokasi di File |
+|------|---------------|
+| Nama mahasiswa | `student.name` |
+| NIM | `student.nim` |
+| Program studi | `student.program` |
+| Tahun masuk | `student.cohort` |
+| Bio / about | `student.bio` |
+| Email | `student.email` |
+| WhatsApp | `student.whatsapp` |
+| Foto profil | `student.photoUrl` |
+| Stats (IPK, semester, dll) | `stats[]` |
+| Riwayat timeline | `timeline[]` |
+| Gallery & proyek | `gallery[]` |
+| Skills | `skills[]` |
+| Kode referral | `referral.code` |
+
+### 2. Component (`src/components/sections/*.vue`)
+File komponen untuk bagian spesifik:
+
+| Component | Fungsi |
+|----------|-------|
+| `Hero.vue` | Teks hero section |
+| `About.vue` | Bagian tentang |
+| `Skills.vue` | Tampilan skills |
+| `Gallery.vue` | Galeri proyek |
+| `Timeline.vue` | Garis waktu |
+| `Contact.vue` | Info kontak |
+| `UnsiaBanner.vue` | Banner info UNSIA |
+
+### 3. Configuration (`src/types/portfolio.ts`)
+Tipe data untuk struktur portfolio (ubah jika menambah field baru).
+
+---
+
+## Cara Mengedit
+
+### Cara 1: Edit Langsung di VS Code
+
+1. Buka file `src/data/portfolio.ts`
+2. Cari teks yang ingin diubah
+3. Ubah nilainya
+4. Simpan (Ctrl + S)
+5. Refresh browser
+
+### Cara 2: Via Terminal dengan `sed`
+
+```bash
+# Contoh ubah nama
+sed -i 's/"Muhammad Munirudin"/"Nama Baru"/g' src/data/portfolio.ts
+
+# Contoh ubah NIM
+sed -i 's/"2024010142"/"NEW_NIM"/g' src/data/portfolio.ts
+```
+
+---
+
+## Contoh Pengeditan
+
+### Ubah Nama & NIM
+```typescript
+export const student: Student = {
+  name: "Nama Kamu",      // ← Ubah di sini
+  nim: "2024010123",     // ← Ubah di sini
+  ...
+};
+```
+
+### Ubah Stats
+```typescript
+export const stats: Stat[] = [
+  { label: "Semester", value: "5", hint: "Aktif berjalan" },
+  { label: "IPK", value: "3.86", hint: "Skala 4.00" },
+  // ↑ Ubah value sesuai Semester/IPK kamu
+];
+```
+
+### Ubah Skills
+```typescript
+export const skills: Skill[] = [
+  { name: "Vue & React", level: 88, category: "Technical" },
+  // ↑ level: angka 0-100
+];
+```
+
+### Ubah Timeline
+```typescript
+export const timeline: TimelineEvent[] = [
+  {
+    semester: "Semester 1",
+    date: "September 2024",
+    title: "Event Baru",
+    description: "Deskripsi event",
+    icon: "flag",
+  },
+];
+```
+
+---
+
+## Tips
+
+1. **Backup dulu** - Copy file sebelum mengubah
+2. **Restart server** - Jangan lupa `npm run dev` setelah ubah
+3. **Clear cache** - Kalau tidak berubah, hapus `.vite` lalu restart
+4. **Gambar** - Simpan di `public/` dan path-nya di `src/data/portfolio.ts`

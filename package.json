@@ -1,0 +1,30 @@
+{
+  "name": "@workspace/portfolio",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --config vite.config.ts --host 0.0.0.0",
+    "build": "vite build --config vite.config.ts",
+    "serve": "vite preview --config vite.config.ts --host 0.0.0.0",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vueuse/core": "^10.7.0",
+    "autoprefixer": "^10.4.17",
+    "gsap": "^3.12.5",
+    "howler": "^2.2.4",
+    "@types/howler": "^2.2.11",
+    "pinia": "^2.1.7",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.0",
+    "vite-plugin-pwa": "^0.19.2",
+    "vue": "^3.4.15",
+    "vue-router": "^4.2.5",
+    "vue-tsc": "^1.8.27"
+  }
+}

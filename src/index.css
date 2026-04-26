@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-night text-white font-sans antialiased;
+    background:
+      radial-gradient(1200px 600px at 10% -10%, rgba(0, 87, 168, 0.25), transparent 60%),
+      radial-gradient(900px 500px at 100% 10%, rgba(200, 150, 10, 0.12), transparent 60%),
+      #0A0E1A;
+  }
+
+  body.light {
+    @apply bg-white text-slate-900;
+    background:
+      radial-gradient(1200px 600px at 10% -10%, rgba(0, 87, 168, 0.10), transparent 60%),
+      radial-gradient(900px 500px at 100% 10%, rgba(200, 150, 10, 0.08), transparent 60%),
+      #ffffff;
+  }
+
+  ::selection {
+    @apply bg-unsia-500/40 text-white;
+  }
+
+  body.light ::selection {
+    @apply bg-unsia-500/30 text-unsia-900;
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+
+  .glass {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.02)
+    );
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    @apply border border-white/10;
+  }
+
+  body.light .glass {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.85),
+      rgba(255, 255, 255, 0.6)
+    );
+    @apply border border-slate-200;
+  }
+
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #F1CD66 0%, #C8960A 50%, #E5B528 100%);
+  }
+
+  .text-gradient-unsia {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #4889CB 0%, #0057A8 60%, #002245 100%);
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-btn px-6 py-3
+      font-display font-semibold text-sm tracking-wide
+      transition-all duration-300 ease-smooth
+      focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/60;
+  }
+
+  .btn-primary {
+    @apply btn bg-unsia-500 text-white shadow-glow
+      hover:bg-unsia-400 hover:-translate-y-0.5
+      active:translate-y-0;
+  }
+
+  .btn-gold {
+    @apply btn text-night shadow-gold
+      hover:-translate-y-0.5 active:translate-y-0;
+    background: linear-gradient(135deg, #F1CD66 0%, #C8960A 100%);
+  }
+
+  .btn-ghost {
+    @apply btn border border-white/20 bg-white/5 text-white
+      hover:bg-white/10 hover:border-white/40;
+  }
+
+  body.light .btn-ghost {
+    @apply border-slate-300 bg-white/70 text-slate-900 hover:bg-white;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-white/15
+      bg-white/5 px-3 py-1 text-xs font-medium text-white/80
+      transition hover:border-gold/60 hover:text-gold hover:bg-gold/10;
+  }
+
+  body.light .chip {
+    @apply border-slate-300 bg-white text-slate-700 hover:border-gold hover:bg-gold/10 hover:text-gold-700;
+  }
+
+  .card-soft {
+    @apply rounded-card glass p-6 transition-all duration-500 ease-smooth
+      hover:-translate-y-1 hover:shadow-glow;
+  }
+
+  .section-label {
+    @apply inline-flex items-center gap-2 rounded-full border border-gold/30
+      bg-gold/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-gold;
+  }
+
+  /* Masonry layout */
+  .masonry {
+    column-count: 1;
+    column-gap: 1rem;
+  }
+  @media (min-width: 640px) { .masonry { column-count: 2; } }
+  @media (min-width: 1024px) { .masonry { column-count: 3; } }
+  .masonry-item {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { scrollbar-width: none; }
+
+  /* Animated gradient border */
+  .border-glow {
+    position: relative;
+  }
+  .border-glow::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: conic-gradient(
+      from 0deg,
+      #0057A8, #C8960A, #4889CB, #F1CD66, #0057A8
+    );
+    z-index: -1;
+    animation: spin 6s linear infinite;
+    filter: blur(2px);
+    opacity: 0.7;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .draw-line {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+  }
+}

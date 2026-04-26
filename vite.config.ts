@@ -5,7 +5,8 @@ import { VitePWA } from "vite-plugin-pwa";
 
 const rawPort = process.env.PORT;
 const port = rawPort ? Number(rawPort) : 3000;
-const basePath = process.env.BASE_PATH || "/";
+const isProduction = process.env.NODE_ENV === "production";
+const basePath = process.env.BASE_PATH || (isProduction ? "/porto/" : "/");
 
 export default defineConfig({
   base: basePath,
@@ -52,15 +53,15 @@ export default defineConfig({
     },
   },
   root: path.resolve(import.meta.dirname),
-  build: {
-    outDir: path.resolve(import.meta.dirname, "dist"),
-    emptyOutDir: true,
-  },
   server: {
     port,
     strictPort: true,
     host: "0.0.0.0",
     allowedHosts: true,
+  },
+  build: {
+    outDir: path.resolve(import.meta.dirname, "docs"),
+    emptyOutDir: true,
   },
   preview: {
     port,

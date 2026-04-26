@@ -2,6 +2,8 @@
 import { student } from "@/data/portfolio";
 import Icon from "@/components/ui/Icon.vue";
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const unsiaLinks = [
   { label: "UNSIA.ac.id", url: "https://unsia.ac.id/" },
   { label: "PMB UNSIA", url: "https://pmb.unsia.ac.id/" },
@@ -30,7 +32,7 @@ const portfolioLinks = [
         <div class="lg:col-span-5">
           <div class="flex items-center gap-3">
             <img
-              src="/profil.jpeg"
+              :src="baseUrl + 'profil.jpeg'"
               alt="Profil"
               class="h-14 w-14 rounded-full object-cover shadow-glow"
             />

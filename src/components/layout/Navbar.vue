@@ -5,6 +5,8 @@ import { useReferralModal } from "@/composables/useReferralModal";
 import { student } from "@/data/portfolio";
 import Icon from "@/components/ui/Icon.vue";
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const themeStore = useThemeStore();
 const referralModal = useReferralModal();
 const scrolled = ref(false);
@@ -59,7 +61,7 @@ function jumpTo(href: string) {
       >
         <div class="relative">
           <img
-            src="/profil.jpeg"
+            :src="baseUrl + 'profil.jpeg'"
             alt="Profil"
             class="h-12 w-12 rounded-full object-cover shadow-glow"
           />

@@ -13,6 +13,8 @@ import type {
   Track,
 } from "@/types/portfolio";
 
+const baseUrl = import.meta.env.BASE_URL;
+
 export const referral: Referral = {
   code: "zero",
   registerUrl: "https://pmb.unsia.ac.id/",
@@ -130,12 +132,12 @@ export const programStudi: ProgramStudi[] = [
 export const aboutMedia: AboutMedia[] = [
   {
     type: "image",
-    src: "/tentang/profil.jpeg",
+    src: `${baseUrl}tentang/profil.jpeg`,
     caption: "Sesi belajar online di UNSIA",
   },
   {
     type: "image",
-    src: "/tentang/gg.jpeg",
+    src: `${baseUrl}tentang/gg.jpeg`,
     caption: "Catatan kuliah & roadmap karier",
   },
 ];
@@ -354,7 +356,7 @@ export const timeline: TimelineEvent[] = [
 ];
 
 export const tracks: Track[] = [
-  { title: "Kuliah UNSIA", src: "/audio/Kuliah-UNSIA-1.mp3" },
+  { title: "Kuliah UNSIA", src: `${baseUrl}audio/Kuliah-UNSIA-1.mp3` },
 ];
 
 export const socials: SocialLink[] = student.socials;

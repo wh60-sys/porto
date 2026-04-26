@@ -60,7 +60,7 @@ export default defineConfig({
     allowedHosts: true,
   },
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist"),
+    outDir: path.resolve(import.meta.dirname, "docs"),
     emptyOutDir: true,
   },
   preview: {
